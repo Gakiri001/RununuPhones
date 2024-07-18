@@ -19,10 +19,10 @@ model phonedetails{
   phoneName String @map("phoneName")
   resolution String @map("resolution")
   processor String @map("processor")
-  ram String @map("ram")
-  storage String @map("storage")
+  ram Int @map("ram")
+  storage Int @map("storage")
   connectivity String @map("connectivity")
-  battery String @map("battery")
+  battery Int @map("battery")
 
   @@map("phone_table")
 }

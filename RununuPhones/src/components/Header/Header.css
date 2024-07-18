@@ -1,61 +1,61 @@
 :root {
-  --color1: #1A3636;
-  --color2: #40534C;
-  --color3: #677D6A;
-  --color4: #D6BD98;
+  --color1: #1a3636;
+  --color2: #40534c;
+  --color3: #677d6a;
+  --color4: #d6bd98;
 }
 
-.Header{
+.Header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0.5rem;
   align-items: center;
 }
 
-.Header .HeaderLeft{
+.Header .HeaderLeft {
   width: 20%;
 }
-.Header .HeaderLeft img{
+.Header .HeaderLeft img {
   width: 30%;
   border-radius: 50%;
 }
 
-.Header .HeaderRight{
+.Header .HeaderRight {
   width: 60%;
 }
 
-.Header .HeaderRight ul{
+.Header .HeaderRight ul {
   display: flex;
   justify-content: space-between;
 }
-.Header .HeaderRight ul li{
+.Header .HeaderRight ul li {
   list-style: none;
 }
-.Header .HeaderRight ul li .HeaderLink{
+.Header .HeaderRight ul li .HeaderLink {
   text-decoration: none;
   color: var(--color3);
 }
-.Header .HeaderRight ul li .HeaderLink:hover{
+.Header .HeaderRight ul li .HeaderLink:hover {
   color: var(--color2);
 }
-.Header .HeaderButtons{
+.Header .HeaderButtons {
   width: 20%;
   display: flex;
   justify-content: flex-end;
   column-gap: 3rem;
 }
-.Header .HeaderButtons button{
+.Header .HeaderButtons button {
   padding: 0.5rem 0.5rem;
   border: none;
   background-color: var(--color1);
   cursor: pointer;
   border-radius: 10px;
 }
-.Header .HeaderButtons button:hover{
+.Header .HeaderButtons button:hover {
   background-color: var(--color2);
 }
 .Header .HeaderButtons button .Login,
-.Header .HeaderButtons button .Signup{
+.Header .HeaderButtons button .Signup {
   text-decoration: none;
   color: var(--color4);
 }

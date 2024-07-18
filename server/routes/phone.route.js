@@ -1,13 +1,8 @@
-import {PrismaClient} from  "@prisma/client"
+import { Router } from "express";
+import { createPhone } from "../controllers/phone.controllers.js";
 
-const prisma = new PrismaClient();
+const router = Router();
 
-export const createPhone = async (req,res) => {
-  try{
-    const {} = req.body
-  }
-  catch(err){
-    res.status(500).json({success:true, message:"server Failed"})
-  }
-}
+router.post("/register", createPhone);
 
+export default router;
