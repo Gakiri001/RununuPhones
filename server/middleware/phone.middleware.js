@@ -12,6 +12,7 @@ export const validatephone = async (req,res,next) => {
     storage,
     connectivity,
     battery,
+    price,
   } = req.body;
 
   //check if all the required fields are provided
@@ -31,6 +32,7 @@ export const validatephone = async (req,res,next) => {
     return res.status(400).json({success:false, message:"Phone connectivity is required"})
   if(!battery) 
     return res.status(400).json({success:false, message:"Battery life is required"})
-
+  if(!price) 
+    return res.status(400).json({success:false, message:"price of phone is required"})
   next();
 }

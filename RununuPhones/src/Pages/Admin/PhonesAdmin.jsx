@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Formik, useFormik } from "formik";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { apiurl } from "../../utils/config";
 
 function PhonesAdmin() {
   const [loading, setLoading] = useState(false);
@@ -8,7 +9,35 @@ function PhonesAdmin() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleSubmit = async (formValues) => {};
+
+  const handleSubmit = async (formValues) => {
+    try{
+      setLoading(true)
+      setError(false)
+      const response = await fetch(`${apiurl}/api/phones/register/`,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues)
+      })
+      const data = await response.json()
+      console.log(data)
+      if (data.success === true) {
+        alert("data sent to database");
+        navigate("/viewPhones")
+      }
+      else{
+        setError(data.message)
+      }
+    }
+    catch(err){
+      setError(err.message)
+    }
+    finally{
+      setLoading(false)
+    }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -20,6 +49,7 @@ function PhonesAdmin() {
       storage: "",
       connectivity: "",
       battery: "",
+      price: "",
     },
     onSubmit: handleSubmit,
   });
@@ -86,6 +116,13 @@ function PhonesAdmin() {
               value={formik.values.battery}
               onChange={formik.handleChange}
               placeholder="Enter the battery life of the phone"
+            />
+               <input
+              type="number"
+              name="price"
+              value={formik.values.price}
+              onChange={formik.handleChange}
+              placeholder="Enter the price of the phone"
             />
           </div>
           <div>

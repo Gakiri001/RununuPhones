@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model phonedetails{
+model phonedetail{
   id String @id @default(uuid())
   phoneImage String @map("phoneImage")
   phoneName String @map("phoneName")
@@ -23,6 +23,7 @@ model phonedetails{
   storage Int @map("storage")
   connectivity String @map("connectivity")
   battery Int @map("battery")
+  price Int @map("price")
 
-  @@map("phone_table")
+  @@map("phonetable")
 }
