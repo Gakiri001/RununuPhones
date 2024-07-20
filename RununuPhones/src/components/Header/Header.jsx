@@ -28,7 +28,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link className="HeaderLink" to="/">
+            <Link className="HeaderLink" to="/Contact">
               Contacts
             </Link>
           </li>

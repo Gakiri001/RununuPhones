@@ -7,6 +7,8 @@ import PhonesAdmin from "./Pages/Admin/PhonesAdmin";
 import ViewPhones from "./Pages/Admin/ViewPhones";
 import Phone from "./Pages/Phone/Phone";
 import Cart, {CartProvider} from "./Pages/Cart/Cart";
+import Footer from "./components/Footer/Footer";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
           <Route path="/ViewPhones" element={<ViewPhones />} />
           <Route path="/Phone" element={<Phone />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
+        <Footer/>
         </CartProvider>
       </BrowserRouter>
     </>

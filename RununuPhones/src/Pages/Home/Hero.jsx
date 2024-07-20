@@ -12,7 +12,7 @@ function Hero() {
       </h3>
       <div className="Button">
         <Link className="linkjoin">Hello John Doe</Link>
-        <Link className="LinkDev">message friends</Link>
+        <Link className="LinkDev">Message Friends</Link>
       </div>
     </section>
   );

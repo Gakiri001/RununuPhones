@@ -1,0 +1,257 @@
+:root {
+  --color1: #006769;
+  --color2: #40a578;
+  --color3: #9dde8d;
+  --color4: #e6ff94;
+}
+.Contact {
+  padding: 2rem;
+  margin: 0 auto;
+}
+.Contact .Hedaer {
+  background-size: cover;
+  margin-bottom: 10px;
+}
+.Contact .Hedaer h1 {
+  text-align: center;
+  color: var(--color1);
+}
+.Contact .ContactWrapper {
+  display: flex;
+  column-gap: 2rem;
+}
+.Contact .ContactWrapper .Contactleft {
+  width: 30%;
+  margin-bottom: 20px;
+}
+.Contact .ContactWrapper .Contactleft .leftHead h1,
+.Contact .ContactWrapper .Contactleft .leftHead p {
+  margin-bottom: 10px;
+  color: var(--color1);
+}
+hr {
+  height: 5px;
+  background-color: var(--color1);
+  margin-bottom: 10px;
+}
+.Contact .ContactWrapper .Contactleft .contactinfoWrapper .contactinfo {
+  margin-bottom: 20px;
+}
+.Contact .ContactWrapper .Contactleft .contactinfoWrapper .contactinfo h2 {
+  margin-bottom: 10px;
+}
+.Contact
+  .ContactWrapper
+  .Contactleft
+  .contactinfoWrapper
+  .contactinfo
+  .contactinfosvgDial {
+  display: flex;
+  column-gap: 4rem;
+  align-items: center;
+}
+.Contact
+  .ContactWrapper
+  .Contactleft
+  .contactinfoWrapper
+  .contactinfo
+  .contactinfosvgDial
+  div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color1);
+  color: var(--color4);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.Contact .ContactWrapper .Contactleft h2,
+.Contact .ContactWrapper .Contactleft p {
+  color: var(--color1);
+}
+.Contact
+  .ContactWrapper
+  .Contactleft
+  .contactinfoWrapper
+  .contactinfo
+  .contactinfosvgDial
+  div:hover {
+  background-color: var(--color2);
+}
+
+/* .Contact .ContactWrapper .contactRight {
+  width: 70%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.Contact .ContactWrapper .contactRight h1,
+.Contact .ContactWrapper .contactRight p {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color1);
+}
+.Contact .ContactWrapper .contactRight form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  align-items: center;
+}
+.Contact .ContactWrapper .contactRight form input {
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  border: var(--color2) solid 2px;
+}
+.Contact .ContactWrapper .contactRight form textarea {
+  width: 30%;
+  height: 100px;
+  background-color: white;
+  border: var(--color2) solid 2px;
+}
+.Contact .ContactWrapper .contactRight form .submit {
+  background-color: var(--color1);
+  color: var(--color4);
+  cursor: pointer;
+  border: none;
+}
+.Contact .ContactWrapper .contactRight img{
+  width: 80%;
+}
+.Contact .ContactWrapper .contactRight form .submit:hover {
+  background-color: var(--color2);
+}
+.map {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 59.375em) {
+  .Contact .ContactWrapper .Contactleft {
+    width: 50%;
+  }
+  .Contact .ContactWrapper .contactRight {
+    width: 50%;
+  }
+  .Contact .ContactWrapper .contactRight img{
+    width: 100%;
+  }
+  .Contact .ContactWrapper .contactRight form textarea,
+  .Contact .ContactWrapper .contactRight form input {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 59.375em) {
+  .Contact .ContactWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Contact .ContactWrapper .Contactleft {
+    width: 80%;
+  }
+  .Contact .ContactWrapper .contactRight {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 29.875em) {
+  .Contact .ContactWrapper .contactRight form textarea,
+  .Contact .ContactWrapper .contactRight form input {
+    width: 90%;
+  }
+  .Contact
+    .ContactWrapper
+    .Contactleft
+    .contactinfoWrapper
+    .contactinfo
+    .contactinfosvgDial
+    div {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+} */
+
+.Contact .ContactWrapper .contactRight {
+  width: 70%;
+  margin-bottom: 20px;
+}
+.Contact .ContactWrapper .contactRight h1,
+.Contact .ContactWrapper .contactRight p {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color1);
+}
+.Contact .ContactWrapper .contactRight p {
+}
+.Contact .ContactWrapper .contactRight form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  align-items: center;
+}
+.Contact .ContactWrapper .contactRight form input {
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  border: var(--color1) solid 2px;
+}
+.Contact .ContactWrapper .contactRight form textarea {
+  width: 30%;
+  height: 100px;
+  background-color: white;
+  border: var(--color1) solid 2px;
+}
+.Contact .ContactWrapper .contactRight form .submit {
+  background-color: var(--color2);
+  cursor: pointer;
+  border: none;
+}
+.Contact .ContactWrapper .contactRight form .submit:hover {
+  background-color: var(--color3);
+}
+.map {
+  width: 100%;
+}
+
+@media screen and (max-width: 59.375em) {
+  .Contact .ContactWrapper .Contactleft {
+    width: 50%;
+  }
+  .Contact .ContactWrapper .contactRight {
+    width: 50%;
+  }
+  .Contact .ContactWrapper .contactRight form textarea,
+  .Contact .ContactWrapper .contactRight form input {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 59.375em) {
+  .Contact .ContactWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Contact .ContactWrapper .Contactleft {
+    width: 80%;
+  }
+  .Contact .ContactWrapper .contactRight {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 29.875em) {
+  .Contact .ContactWrapper .contactRight form textarea,
+  .Contact .ContactWrapper .contactRight form input {
+    width: 90%;
+  }
+  .Contact
+    .ContactWrapper
+    .Contactleft
+    .contactinfoWrapper
+    .contactinfo
+    .contactinfosvgDial
+    div {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}

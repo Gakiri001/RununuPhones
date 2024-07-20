@@ -1,0 +1,38 @@
+.Footer {
+  background-color: #3572ef;
+  padding: 0.6rem;
+}
+.Footer .FooterWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Footer .FooterWrapper .FooterLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Footer .FooterWrapper .FooterLeft img {
+  width: 80px;
+  border-radius: 50%;
+}
+.Footer .FooterWrapper .FooterLeft p {
+  text-align: center;
+}
+.Footer .FooterWrapper .FooterRight p {
+  display: flex;
+  column-gap: 1rem;
+}
+.Footer .FooterWrapper .FooterRight p span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: #3572ef;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.Footer .FooterWrapper .FooterRight p span:hover {
+  background-color: rgb(189, 187, 187);
+}
