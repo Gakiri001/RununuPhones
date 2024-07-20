@@ -1,10 +1,14 @@
+// Header.jsx
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/phoneLogo.jpeg";
 import { FaShoppingCart } from "react-icons/fa";
+import { useAuth } from "../../context/AuthContext";
 
 function Header() {
+  const { user, logout } = useAuth();
+
   return (
     <div className="Header">
       <div className="HeaderLeft">
@@ -42,16 +46,25 @@ function Header() {
         </ul>
       </div>
       <div className="HeaderButtons">
-        <button>
-          <Link className="Login" to="/Login">
-            Log In
-          </Link>
-        </button>
-        <button>
-          <Link className="Signup" to="/Signup">
-            Sign Up
-          </Link>
-        </button>
+        {user ? (
+          <>
+            <span>Welcome, {user.name}</span>
+            <button onClick={logout}>Log Out</button>
+          </>
+        ) : (
+          <>
+            <button>
+              <Link className="Login" to="/Login">
+                Log In
+              </Link>
+            </button>
+            <button>
+              <Link className="Signup" to="/Signup">
+                Sign Up
+              </Link>
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

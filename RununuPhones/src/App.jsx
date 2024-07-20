@@ -6,7 +6,7 @@ import Admin from "./Pages/Admin/Admin";
 import PhonesAdmin from "./Pages/Admin/PhonesAdmin";
 import ViewPhones from "./Pages/Admin/ViewPhones";
 import Phone from "./Pages/Phone/Phone";
-import Cart from "./Pages/Cart/Cart";
+import Cart, { CartProvider } from "./Pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
 import ContactAdmin from "./Pages/Admin/ContactAdmin";
@@ -20,24 +20,54 @@ function App() {
     <>
       <BrowserRouter>
         <AuthProvider>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Signup />} />
+          <CartProvider>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Signup />} />
+              <Route path="/Login" element={<Login />} />
 
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
+              <Route
+                path="/Home"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/Phone"
+                element={
+                  <ProtectedRoute>
+                    <Phone />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/Cart"
+                element={
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/Contact"
+                element={
+                  <ProtectedRoute>
+                    <Contact />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/Signup" element={<Signup />} />
 
-            <Route path="/Phone" element={<Phone />} />
-            <Route path="/Cart" element={<Cart />} />
-            <Route path="/Contact" element={<Contact />} />
+              <Route path="/Admin" element={<Admin />} />
+              <Route path="/PhonesAdmin" element={<PhonesAdmin />} />
+              <Route path="/ViewPhones" element={<ViewPhones />} />
+              <Route path="/ContactAdmin" element={<ContactAdmin />} />
+            </Routes>
 
-            <Route path="/Admin" element={<Admin />} />
-            <Route path="/PhonesAdmin" element={<PhonesAdmin />} />
-            <Route path="/ViewPhones" element={<ViewPhones />} />
-            <Route path="/ContactAdmin" element={<ContactAdmin />} />
-          </Routes>
-
-          <Footer />
+            <Footer />
+          </CartProvider>
         </AuthProvider>
       </BrowserRouter>
     </>

@@ -49,7 +49,7 @@ export const loginUser = async (req, res) => {
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           expiresIn: "10m",
         });
-        res.cookie("Beba_access_token", token, {
+        res.cookie("rununu_access_token", token, {
           httpOnly: true,
         });
         res.status(200).json({ success: true, data: payload });

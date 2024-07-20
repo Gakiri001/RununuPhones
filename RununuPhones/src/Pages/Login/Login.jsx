@@ -1,10 +1,11 @@
+// Login.jsx
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
 import { FaEnvelope } from "react-icons/fa";
 import { GiPadlock } from "react-icons/gi";
-import { apiurl } from "../../utils/config"; // Ensure the path is correct
+import { apiurl } from "../../utils/config";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
@@ -28,10 +29,9 @@ function Login() {
       });
 
       const data = await response.json();
-      console.log(data);
 
       if (response.ok) {
-        login();
+        login(data.user); // Pass user data to login function
         navigate("/Home");
       } else {
         setError(data.message || "Login Failed");
@@ -56,7 +56,6 @@ function Login() {
         initialValues={{ email: "", password: "" }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
-          console.log("Login Data", values);
           handleSubmit(values);
           setSubmitting(false);
         }}

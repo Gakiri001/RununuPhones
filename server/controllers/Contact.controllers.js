@@ -47,13 +47,11 @@ export const updateContact = async (req, res) => {
       where: { id: parseInt(id, 10) },
       data: { name, email, subject, explanation },
     });
-    res
-      .status(200)
-      .json({
-        success: true,
-        message: "Contact updated successfully",
-        contact,
-      });
+    res.status(200).json({
+      success: true,
+      message: "Contact updated successfully",
+      contact,
+    });
   } catch (error) {
     res.status(500).json({ success: false, message: "An error occurred" });
   }

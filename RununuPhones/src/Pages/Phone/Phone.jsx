@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/config";
+import { useCart } from "../Cart/Cartcontext.jsx";
 
 function Phone() {
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { addToCart, isInCart } = useCart();
 
   useEffect(() => {
     const fetchPhones = async () => {
@@ -25,6 +28,15 @@ function Phone() {
     };
     fetchPhones();
   }, []);
+
+  const handleAddToCart = (current) => {
+    if (!isInCart(current.id)) {
+      addToCart(current);
+      alert("Successfully Added to Cart");
+    } else {
+      alert("Already Added to the Cart");
+    }
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -49,7 +61,9 @@ function Phone() {
               <p>{current.price}</p>
             </div>
             <div>
-              <button>Buy</button>
+              <button onClick={() => handleAddToCart(current)}>
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}
