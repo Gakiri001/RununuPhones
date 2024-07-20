@@ -151,6 +151,7 @@ function Contact() {
               onChange={formik.handleChange}
             ></textarea>
             <input className="submit" type="Submit" />
+            <p className="error">{error && error}</p>
           </form>
         </div>
       </div>
