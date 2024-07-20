@@ -4,22 +4,24 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {
-    const savedCartItems = localStorage.getItem('cartItems');
+    const savedCartItems = localStorage.getItem("cartItems");
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (item) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prevItems.find(
+        (cartItem) => cartItem.id === item.id,
+      );
       if (existingItem) {
         return prevItems.map((cartItem) =>
           cartItem.id === item.id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+            : cartItem,
         );
       }
       return [...prevItems, { ...item, quantity: 1 }];
@@ -36,8 +38,8 @@ export const CartProvider = ({ children }) => {
     } else {
       setCartItems((prevItems) =>
         prevItems.map((item) =>
-          item.id === itemId ? { ...item, quantity: newQuantity } : item
-        )
+          item.id === itemId ? { ...item, quantity: newQuantity } : item,
+        ),
       );
     }
   };

@@ -11,26 +11,34 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
 import ContactAdmin from "./Pages/Admin/ContactAdmin";
 import Signup from "./Pages/Signup/Signup";
+import Login from "./Pages/Login/Login";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      {/* <CartProvider> */}
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Admin" element={<Admin />} />
-          <Route path="/PhonesAdmin" element={<PhonesAdmin />} />
-          <Route path="/ViewPhones" element={<ViewPhones />} />
-          <Route path="/Phone" element={<Phone />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/ContactAdmin" element={<ContactAdmin />} />
-          <Route path="/Signup" element={<Signup />} />
-        </Routes>
-        <Footer/>
-        {/* </CartProvider> */}
+        <AuthProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Signup />} />
+
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Home" element={<Home />} />
+
+            <Route path="/Phone" element={<Phone />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Contact" element={<Contact />} />
+
+            <Route path="/Admin" element={<Admin />} />
+            <Route path="/PhonesAdmin" element={<PhonesAdmin />} />
+            <Route path="/ViewPhones" element={<ViewPhones />} />
+            <Route path="/ContactAdmin" element={<ContactAdmin />} />
+          </Routes>
+
+          <Footer />
+        </AuthProvider>
       </BrowserRouter>
     </>
   );

@@ -1,34 +1,30 @@
-import {useEffect, useState} from 'react'
-import { apiurl } from '../../utils/config';
+import { useEffect, useState } from "react";
+import { apiurl } from "../../utils/config";
 
 function Phone() {
-  const [phones, setPhones] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [phones, setPhones] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await fetch(`${apiurl}/api/phones/register`)
+        const response = await fetch(`${apiurl}/api/phones/register`);
         const data = await response.json();
 
-        if (data.success === true){
-          setPhones(data.phoneDetail)
+        if (data.success === true) {
+          setPhones(data.phoneDetail);
+        } else {
+          setError(data.message);
         }
-        else{
-          setError(data.message)
-        }
-      } 
-      catch (err) {
-        setError(err.message)        
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
-      finally{
-        setLoading(false)
-      }
-    }
-    fetchPhones()
-  }, [])
-
+    };
+    fetchPhones();
+  }, []);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -43,7 +39,7 @@ function Phone() {
               <img src={current.phoneImage} alt={current.phoneName} />
             </div>
             <div>
-            <h1>{current.phoneName}</h1>
+              <h1>{current.phoneName}</h1>
               <p>Resolution: {current.resolution}</p>
               <p>{current.processor}</p>
               <p>{current.ram}</p>
@@ -59,7 +55,7 @@ function Phone() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Phone
+export default Phone;

@@ -24,7 +24,7 @@
 }
 .HeroWrapper h3 span,
 .HeroWrapper h1 span {
-  color:var(--color2);
+  color: var(--color2);
 }
 .HeroWrapper h3 {
   color: white;

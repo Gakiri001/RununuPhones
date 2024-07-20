@@ -1,36 +1,34 @@
-import bcrypt from "bcrypt"
-import { PrismaClient } from "@prisma/client"
-import {json} from "express"
-import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt";
+import { PrismaClient } from "@prisma/client";
+import { json } from "express";
+import jwt from "jsonwebtoken";
 
 const prisma = new PrismaClient();
 
-export const createContact = async (req,res) => {
-  try{
-    const {name, email, subject, explanation } = req.body
+export const createContact = async (req, res) => {
+  try {
+    const { name, email, subject, explanation } = req.body;
 
-    const lessee =await prisma.contactSubject.create({
+    const lessee = await prisma.contactSubject.create({
       data: {
-    
         name: name,
         email: email,
         subject: subject,
         explanation: explanation,
       },
-      select:{
+      select: {
         id: true,
         name: true,
         email: true,
         subject: true,
         explanation: true,
       },
-    })
-    res.status(201).json({success:true, message:"Response Successfully"})
+    });
+    res.status(201).json({ success: true, message: "Response Successfully" });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server Failed" });
   }
-  catch(err){
-    res.status(500).json({success:false, message:"Server Failed"})
-  }
-}
+};
 
 export const getContacts = async (req, res) => {
   try {
@@ -49,24 +47,30 @@ export const updateContact = async (req, res) => {
       where: { id: parseInt(id, 10) },
       data: { name, email, subject, explanation },
     });
-    res.status(200).json({ success: true, message: "Contact updated successfully", contact });
+    res
+      .status(200)
+      .json({
+        success: true,
+        message: "Contact updated successfully",
+        contact,
+      });
   } catch (error) {
     res.status(500).json({ success: false, message: "An error occurred" });
   }
 };
 
 export const deleteContact = async (req, res) => {
-  const  id  = req.params.id;
+  const id = req.params.id;
   try {
     const delectSubject = await prisma.contactSubject.delete({
       where: { id: id },
-      select:{
+      select: {
         name: true,
         email: true,
         subject: true,
         explanation: true,
-        id:true
-      }
+        id: true,
+      },
     });
     res.status(200).json(delectSubject);
   } catch (error) {

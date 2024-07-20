@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import { PrismaClient } from "@prisma/client";
 import { json } from "express";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
 const prisma = new PrismaClient();
 
@@ -32,41 +32,41 @@ export const createUser = async (req, res) => {
   }
 };
 
-export const loginUser = async (req,res) => {
-  const {email, password} =req.body
-  try{
+export const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  try {
     const user = await prisma.usersign.findFirst({
-      where:{email:email}
-    })
-    if(user){
-      const passwordMatch = bcrypt.compareSync(password,user.password)
-      if(passwordMatch === true){
+      where: { email: email },
+    });
+    if (user) {
+      const passwordMatch = bcrypt.compareSync(password, user.password);
+      if (passwordMatch === true) {
         const payload = {
           id: user.id,
           name: user.name,
-          email: user.email
-        }
+          email: user.email,
+        };
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-          expiresIn:"10m",
-        })
-        res.cookie("Beba_access_token",token, {
-        httpOnly:true})
-        res.status(200).json({success:true, data:payload})
+          expiresIn: "10m",
+        });
+        res.cookie("Beba_access_token", token, {
+          httpOnly: true,
+        });
+        res.status(200).json({ success: true, data: payload });
+      } else {
+        res
+          .status(400)
+          .json({ success: false, message: "Wrong Login credentials" });
       }
-      else{
-        res.status(400).json({success:false,message:"Wrong Login credentials"})
-      }
+    } else {
+      res
+        .status(400)
+        .json({ success: false, message: "Wrong Login credentials" });
     }
-    else{
-      res.status(400).json({success:false,
-      message:"Wrong Login credentials"})
-    }
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
   }
-  catch(err){
-    res.status(500).json({success:false, message:err.message})
-  }
-}
-
+};
 
 export const getUsers = async (req, res) => {
   try {
@@ -77,20 +77,19 @@ export const getUsers = async (req, res) => {
   }
 };
 
-
 export const deleteUser = async (req, res) => {
-  const  id  = req.params.id;
+  const id = req.params.id;
   try {
     const delectUserInfo = await prisma.usersign.delete({
       where: { id: id },
-      select:{
+      select: {
         firstname: true,
         lastname: true,
         email: true,
         phoneNumber: true,
         password: true,
-        id:true
-      }
+        id: true,
+      },
     });
     res.status(200).json(delectUserInfo);
   } catch (error) {

@@ -13,7 +13,7 @@ export const createPhone = async (req, res) => {
       storage,
       connectivity,
       battery,
-      price
+      price,
     } = req.body;
 
     const phone = await prisma.phonedetail.create({
@@ -26,7 +26,7 @@ export const createPhone = async (req, res) => {
         storage: storage,
         connectivity: connectivity,
         battery: battery,
-        price:price
+        price: price,
       },
       select: {
         id: true,
@@ -41,28 +41,27 @@ export const createPhone = async (req, res) => {
         price: true,
       },
     });
-    res.status(201).json({success:true,message:"response successfully"});
+    res.status(201).json({ success: true, message: "response successfully" });
   } catch (err) {
     res.status(500).json({ success: true, message: "server Failed" });
   }
 };
 
-export const getPhone = async(req, res) => {
-  try{
-    const phoneDetail = await prisma.phonedetail.findMany()
-    res.status(200).json({success:true, phoneDetail})
+export const getPhone = async (req, res) => {
+  try {
+    const phoneDetail = await prisma.phonedetail.findMany();
+    res.status(200).json({ success: true, phoneDetail });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "An error occured" });
   }
-  catch(err){
-    res.status(500).json({success:false,message:"An error occured"})
-  }
-}
+};
 
-export const deletePhone = async (req,res) => {
-  const id = req.params.id
-  try{
+export const deletePhone = async (req, res) => {
+  const id = req.params.id;
+  try {
     const deletePhoneInfo = await prisma.phonedetail.delete({
-      where:{id:id},
-      select:{
+      where: { id: id },
+      select: {
         id: true,
         phoneImage: true,
         phoneName: true,
@@ -73,16 +72,15 @@ export const deletePhone = async (req,res) => {
         connectivity: true,
         battery: true,
         price: true,
-      }
-    })
-    res.status(200).json({success:true, message:"Phone deleted"})
+      },
+    });
+    res.status(200).json({ success: true, message: "Phone deleted" });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "An error occured" });
   }
-  catch(err){
-    res.status(500).json({success:false, message:"An error occured"})
-  }
-}
+};
 
-export const updatephone = async (req,res) => {
+export const updatephone = async (req, res) => {
   const {
     phoneImage,
     phoneName,
@@ -94,65 +92,65 @@ export const updatephone = async (req,res) => {
     battery,
     price,
   } = req.body;
-  const id = req.params.id
+  const id = req.params.id;
   try {
-    let updatephoneInfo
-    if(phoneImage){
+    let updatephoneInfo;
+    if (phoneImage) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {phoneImage:phoneImage}
-      })
+        where: { id: id },
+        data: { phoneImage: phoneImage },
+      });
     }
-    if(phoneName){
+    if (phoneName) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {phoneName:phoneName}
-      })
+        where: { id: id },
+        data: { phoneName: phoneName },
+      });
     }
-    if(resolution){
+    if (resolution) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {resolution:resolution}
-      })
+        where: { id: id },
+        data: { resolution: resolution },
+      });
     }
-    if(processor){
+    if (processor) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {processor:processor}
-      })
+        where: { id: id },
+        data: { processor: processor },
+      });
     }
-    if(ram){
+    if (ram) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {ram:ram}
-      })
+        where: { id: id },
+        data: { ram: ram },
+      });
     }
-    if(storage){
+    if (storage) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {storage:storage}
-      })
+        where: { id: id },
+        data: { storage: storage },
+      });
     }
-    if(connectivity){
+    if (connectivity) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {connectivity:connectivity}
-      })
+        where: { id: id },
+        data: { connectivity: connectivity },
+      });
     }
-    if(battery){
+    if (battery) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {battery:battery}
-      })
+        where: { id: id },
+        data: { battery: battery },
+      });
     }
-    if(price){
+    if (price) {
       updatephoneInfo = await prisma.phonedetail.update({
-        where:{id:id},
-        data: {battery:price}
-      })
+        where: { id: id },
+        data: { battery: price },
+      });
     }
-    res.status(200).json({success:true, message:"Phone update done"})
+    res.status(200).json({ success: true, message: "Phone update done" });
   } catch (err) {
-    res.status(500).json({success:false, message:"An error occured"})    
+    res.status(500).json({ success: false, message: "An error occured" });
   }
-}
+};

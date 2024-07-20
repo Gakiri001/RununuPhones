@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/config";
-import "./Admin.css"
+import "./Admin.css";
 
 function ContactAdmin() {
   const [contacts, setContacts] = useState([]);
@@ -35,7 +35,7 @@ function ContactAdmin() {
       });
       const data = await response.json();
       if (response.ok) {
-        setContacts(contacts.filter(contact => contact.id !== id));
+        setContacts(contacts.filter((contact) => contact.id !== id));
         alert("Data Deleted");
       } else {
         setError(data.message);
@@ -51,16 +51,23 @@ function ContactAdmin() {
 
   const handleUpdate = async (updatedContact) => {
     try {
-      const response = await fetch(`${apiurl}/api/subject/contact/${updatedContact.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${apiurl}/api/subject/contact/${updatedContact.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedContact),
         },
-        body: JSON.stringify(updatedContact),
-      });
+      );
       const data = await response.json();
       if (data.success) {
-        setContacts(contacts.map(contact => contact.id === updatedContact.id ? updatedContact : contact));
+        setContacts(
+          contacts.map((contact) =>
+            contact.id === updatedContact.id ? updatedContact : contact,
+          ),
+        );
         setEditContact(null);
       } else {
         setError(data.message);
@@ -106,32 +113,42 @@ function ContactAdmin() {
       {editContact && (
         <div>
           <h2>Edit Contact</h2>
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            handleUpdate(editContact);
-          }}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleUpdate(editContact);
+            }}
+          >
             <input
               type="text"
               name="name"
               value={editContact.name}
-              onChange={(e) => setEditContact({ ...editContact, name: e.target.value })}
+              onChange={(e) =>
+                setEditContact({ ...editContact, name: e.target.value })
+              }
             />
             <input
               type="email"
               name="email"
               value={editContact.email}
-              onChange={(e) => setEditContact({ ...editContact, email: e.target.value })}
+              onChange={(e) =>
+                setEditContact({ ...editContact, email: e.target.value })
+              }
             />
             <input
               type="text"
               name="subject"
               value={editContact.subject}
-              onChange={(e) => setEditContact({ ...editContact, subject: e.target.value })}
+              onChange={(e) =>
+                setEditContact({ ...editContact, subject: e.target.value })
+              }
             />
             <textarea
               name="explanation"
               value={editContact.explanation}
-              onChange={(e) => setEditContact({ ...editContact, explanation: e.target.value })}
+              onChange={(e) =>
+                setEditContact({ ...editContact, explanation: e.target.value })
+              }
             ></textarea>
             <button type="submit">Update</button>
           </form>

@@ -9,33 +9,29 @@ function PhonesAdmin() {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const handleSubmit = async (formValues) => {
-    try{
-      setLoading(true)
-      setError(false)
-      const response = await fetch(`${apiurl}/api/phones/register/`,{
+    try {
+      setLoading(true);
+      setError(false);
+      const response = await fetch(`${apiurl}/api/phones/register/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues)
-      })
-      const data = await response.json()
-      console.log(data)
+        body: JSON.stringify(formValues),
+      });
+      const data = await response.json();
+      console.log(data);
       if (data.success === true) {
         alert("data sent to database");
-        navigate("/viewPhones")
+        navigate("/viewPhones");
+      } else {
+        setError(data.message);
       }
-      else{
-        setError(data.message)
-      }
-    }
-    catch(err){
-      setError(err.message)
-    }
-    finally{
-      setLoading(false)
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -117,7 +113,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the battery life of the phone"
             />
-               <input
+            <input
               type="number"
               name="price"
               value={formik.values.price}

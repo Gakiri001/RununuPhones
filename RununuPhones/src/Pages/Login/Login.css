@@ -1,0 +1,98 @@
+:root {
+  --color1: #006769;
+  --color2: #40a578;
+  --color3: #9dde8d;
+  --color4: #e6ff94;
+}
+.LogIn {
+  background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
+    url(../../assets/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  row-gap: 2rem;
+  height: 100vh;
+  position: relative;
+}
+.LogIn .form {
+  width: 100%;
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color2);
+  padding: 1rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.LogIn .form .inputGroup {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.LogIn .form .inputGroup .inputFiled {
+  background: #eaeaea;
+  width: 45%;
+  margin: 15px 0;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+.LogIn .form .inputGroup .inputFiled label {
+  margin-left: 15px;
+  color: #999;
+}
+.LogIn .form .inputGroup .inputFiled .password,
+.LogIn .form .inputGroup .inputFiled .email {
+  background: #eaeaea;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+  border-radius: 20px;
+}
+.LogIn .form .inputGroup .inputFiled .error {
+  color: red;
+  font-size: 11px;
+}
+.LogIn .form .LoginDiv {
+  display: grid;
+  place-content: center;
+  width: 100%;
+}
+.LogIn .form .Loginbtn {
+  padding: 1rem 3rem;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+.LogIn .form .Loginbtn:hover {
+  background-color: var(--color3);
+}
+
+.LogIn .form .loginPara {
+  margin: 0.5rem 0;
+}
+.LogIn .form .loginPara a {
+  color: var(--color4);
+  cursor: pointer;
+  text-decoration: none;
+}
+.LogIn .form .loginPara a:hover {
+  color: var(--color3);
+}

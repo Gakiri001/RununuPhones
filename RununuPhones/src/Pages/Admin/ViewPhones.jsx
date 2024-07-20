@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { apiurl } from '../../utils/config';
+import { useEffect, useState } from "react";
+import { apiurl } from "../../utils/config";
 
 function ViewPhones() {
   const [phones, setPhones] = useState([]);
@@ -30,13 +30,13 @@ function ViewPhones() {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`${apiurl}/api/phones/register/${id}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
       const data = await response.json();
 
       if (response.ok) {
         setPhones(phones.filter((current) => current.id !== id));
-        alert('Phone deleted successfully');
+        alert("Phone deleted successfully");
       } else {
         setError(data.message);
       }
@@ -49,15 +49,19 @@ function ViewPhones() {
     e.preventDefault();
     try {
       const response = await fetch(`${apiurl}/api/phones/register/${id}`, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(editPhone),
       });
       const data = await response.json();
       if (data.success === true) {
-        setPhones(phones.map((current) => (current.id === id ? { ...current, ...editPhone } : current)));
+        setPhones(
+          phones.map((current) =>
+            current.id === id ? { ...current, ...editPhone } : current,
+          ),
+        );
         setEditPhone(null);
       } else {
         setError(data.message);
@@ -104,55 +108,79 @@ function ViewPhones() {
               type="text"
               name="phoneImage"
               value={editPhone.phoneImage}
-              onChange={(e) => setEditPhone({ ...editPhone, phoneImage: e.target.value })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, phoneImage: e.target.value })
+              }
             />
             <input
               type="text"
               name="phoneName"
               value={editPhone.phoneName}
-              onChange={(e) => setEditPhone({ ...editPhone, phoneName: e.target.value })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, phoneName: e.target.value })
+              }
             />
             <input
               type="text"
               name="resolution"
               value={editPhone.resolution}
-              onChange={(e) => setEditPhone({ ...editPhone, resolution: e.target.value })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, resolution: e.target.value })
+              }
             />
             <input
               type="text"
               name="processor"
               value={editPhone.processor}
-              onChange={(e) => setEditPhone({ ...editPhone, processor: e.target.value })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, processor: e.target.value })
+              }
             />
             <input
               type="number"
               name="ram"
               value={editPhone.ram}
-              onChange={(e) => setEditPhone({ ...editPhone, ram: parseInt(e.target.value) })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, ram: parseInt(e.target.value) })
+              }
             />
             <input
               type="number"
               name="storage"
               value={editPhone.storage}
-              onChange={(e) => setEditPhone({ ...editPhone, storage: parseInt(e.target.value) })}
+              onChange={(e) =>
+                setEditPhone({
+                  ...editPhone,
+                  storage: parseInt(e.target.value),
+                })
+              }
             />
             <input
               type="text"
               name="connectivity"
               value={editPhone.connectivity}
-              onChange={(e) => setEditPhone({ ...editPhone, connectivity: e.target.value })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, connectivity: e.target.value })
+              }
             />
             <input
               type="number"
               name="battery"
               value={editPhone.battery}
-              onChange={(e) => setEditPhone({ ...editPhone, battery: parseInt(e.target.value) })}
+              onChange={(e) =>
+                setEditPhone({
+                  ...editPhone,
+                  battery: parseInt(e.target.value),
+                })
+              }
             />
             <input
               type="number"
               name="price"
               value={editPhone.price}
-              onChange={(e) => setEditPhone({ ...editPhone, price: parseInt(e.target.value) })}
+              onChange={(e) =>
+                setEditPhone({ ...editPhone, price: parseInt(e.target.value) })
+              }
             />
             <button type="submit">Update</button>
           </form>

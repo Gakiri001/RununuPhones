@@ -1,10 +1,9 @@
 import express from "express";
 import { config } from "dotenv";
-import usersRouter from "./routes/users.routes.js"
+import usersRouter from "./routes/users.routes.js";
 import phoneRouter from "./routes/phone.route.js";
-import ContactRouter from "./routes/contact.route.js"
+import ContactRouter from "./routes/contact.route.js";
 import cors from "cors";
-
 
 config();
 
@@ -22,7 +21,7 @@ app.use(express.json());
 
 app.use("/api/users", usersRouter);
 app.use("/api/phones", phoneRouter);
-app.use("/api/subject/", ContactRouter)
+app.use("/api/subject/", ContactRouter);
 
 // app.get("/", (req, res) => {
 //   res.send("hello");
