@@ -6,15 +6,16 @@ import Admin from "./Pages/Admin/Admin";
 import PhonesAdmin from "./Pages/Admin/PhonesAdmin";
 import ViewPhones from "./Pages/Admin/ViewPhones";
 import Phone from "./Pages/Phone/Phone";
-import Cart, {CartProvider} from "./Pages/Cart/Cart";
+import Cart from "./Pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
+import ContactAdmin from "./Pages/Admin/ContactAdmin";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <CartProvider>
+      {/* <CartProvider> */}
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,9 +25,10 @@ function App() {
           <Route path="/Phone" element={<Phone />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/ContactAdmin" element={<ContactAdmin />} />
         </Routes>
         <Footer/>
-        </CartProvider>
+        {/* </CartProvider> */}
       </BrowserRouter>
     </>
   );
