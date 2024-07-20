@@ -1,0 +1,94 @@
+:root {
+  --color1: #1a3636;
+  --color2: #40534c;
+  --color3: #677d6a;
+  --color4: #d6bd98;
+}
+
+.HeroWrapper {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../../assets/herophone.jpg);
+  height: 80vh;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.HeroWrapper h1 {
+  font-size: 50px;
+  color: white;
+  font-style: italic;
+}
+.HeroWrapper h3 span,
+.HeroWrapper h1 span {
+  color:var(--color2);
+}
+.HeroWrapper h3 {
+  color: white;
+  font-size: 25px;
+}
+.HeroWrapper .Button {
+  margin-top: 30px;
+}
+
+.HeroWrapper .linkjoin {
+  padding: 20px;
+  display: inline-block;
+  background-color: white;
+  color: var(--color2);
+  border-radius: 7px;
+  text-decoration: none;
+  margin-right: 80px;
+  font-size: 20px;
+}
+
+.HeroWrapper .linkjoin:hover {
+  background-color: var(--color2);
+  color: white;
+}
+
+.HeroWrapper .LinkDev {
+  padding: 20px;
+  display: inline-block;
+  background-color: var(--color2);
+  color: white;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.HeroWrapper .LinkDev:hover {
+  background-color: white;
+  color: var(--color2);
+}
+
+@media screen and (max-width: 53.125em) {
+  .HeroWrapper h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .HeroWrapper h3 {
+    color: white;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 33.125em) {
+  .HeroWrapper h1 {
+    text-align: center;
+  }
+  .HeroWrapper .linkjoin {
+    margin-right: 8px;
+  }
+}
+@media screen and (max-width: 26.875em) {
+  .HeroWrapper .linkjoin {
+    padding: 10px;
+    font-size: 15px;
+  }
+  .HeroWrapper .LinkDev {
+    padding: 10px;
+    font-size: 15px;
+  }
+}

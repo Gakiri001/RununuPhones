@@ -6,11 +6,13 @@ import Admin from "./Pages/Admin/Admin";
 import PhonesAdmin from "./Pages/Admin/PhonesAdmin";
 import ViewPhones from "./Pages/Admin/ViewPhones";
 import Phone from "./Pages/Phone/Phone";
+import Cart, {CartProvider} from "./Pages/Cart/Cart";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <CartProvider>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,7 +20,9 @@ function App() {
           <Route path="/PhonesAdmin" element={<PhonesAdmin />} />
           <Route path="/ViewPhones" element={<ViewPhones />} />
           <Route path="/Phone" element={<Phone />} />
+          <Route path="/Cart" element={<Cart />} />
         </Routes>
+        </CartProvider>
       </BrowserRouter>
     </>
   );

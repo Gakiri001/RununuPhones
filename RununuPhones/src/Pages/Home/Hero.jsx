@@ -1,0 +1,21 @@
+import "./Home.css";
+import { Link } from "react-router-dom";
+
+function Hero() {
+  return (
+    <section className="HeroWrapper">
+      <h1>
+        Rununu <span> Phones</span>
+      </h1>
+      <h3>
+        Connect the wo<span>rld with us</span>
+      </h3>
+      <div className="Button">
+        <Link className="linkjoin">Hello John Doe</Link>
+        <Link className="LinkDev">message friends</Link>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
