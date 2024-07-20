@@ -13,6 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Usersign {
+  id String @id @default(uuid())
+  firstname String @map("firstname")
+  lastname String @map("lastname")
+  email String @map("email")
+  phoneNumber Int @map("phoneNumber")
+  password String @map("password")
+
+  @@unique([email])
+  @@map("user_table")
+}
+
 model phonedetail{
   id String @id @default(uuid())
   phoneImage String @map("phoneImage")

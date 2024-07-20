@@ -10,6 +10,7 @@ import Cart from "./Pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
 import ContactAdmin from "./Pages/Admin/ContactAdmin";
+import Signup from "./Pages/Signup/Signup";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/ContactAdmin" element={<ContactAdmin />} />
+          <Route path="/Signup" element={<Signup />} />
         </Routes>
         <Footer/>
         {/* </CartProvider> */}
