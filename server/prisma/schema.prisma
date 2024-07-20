@@ -27,3 +27,14 @@ model phonedetail{
 
   @@map("phonetable")
 }
+
+
+model ContactSubject{
+  id String @id @default(uuid())
+  name String @map("name")
+  email String @map("email")
+  subject String @map("subject")
+  explanation String @map("explanation")
+
+  @@map("subject_table")
+}
