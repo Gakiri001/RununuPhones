@@ -5,7 +5,7 @@
   --color4: #e6ff94;
 }
 
-section{
+section {
   background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
     url(../../assets/hero.jpg);
   background-size: cover;
@@ -16,7 +16,7 @@ section{
   height: 100vh;
   position: relative;
 }
-section div{
+section div {
   width: 100%;
   max-width: 650px;
   position: absolute;
@@ -33,7 +33,7 @@ section div{
   display: grid;
   place-content: center;
 }
-section div a{
+section div a {
   text-decoration: none;
   width: 100%;
   padding: 1rem 0;
@@ -46,7 +46,7 @@ section div a{
   color: black;
   text-transform: capitalize;
 }
-section div a:hover{
+section div a:hover {
   background-color: var(--color3);
 }
 :root {
@@ -55,7 +55,7 @@ section div a:hover{
   --color3: #9dde8d;
   --color4: #e6ff94;
 }
-section{
+section {
   background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
     url(../../assets/hero.jpg);
   background-size: cover;
@@ -66,7 +66,7 @@ section{
   height: 100vh;
   position: relative;
 }
-section div{
+section div {
   width: 100%;
   max-width: 650px;
   position: absolute;
@@ -83,13 +83,12 @@ section div{
   display: grid;
   place-content: center;
 }
-section div h1{
+section div h1 {
   font-size: 50px;
   color: var(--color4);
 }
 
-
-section div a{
+section div a {
   text-decoration: none;
   width: 100%;
   padding: 1rem 0;
@@ -102,11 +101,11 @@ section div a{
   color: black;
   text-transform: capitalize;
 }
-section div a:hover{
+section div a:hover {
   background-color: var(--color3);
 }
 
-.body{
+.body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,35 +114,38 @@ section div a:hover{
   row-gap: 2rem;
   padding: 4rem;
 }
-.body h1{
+.body h1 {
   text-align: center;
   margin: 2rem;
 }
-.body table{
+.body table {
   border: 1px solid #151314;
   text-align: center;
   border-radius: 7px;
   background: linear-gradient(145deg, var(--color3), var(--color3));
-  box-shadow: 9px 9px 18px #1f1f1f, -9px -9px 18px #474747;
- 
+  box-shadow:
+    9px 9px 18px #1f1f1f,
+    -9px -9px 18px #474747;
 }
-.body table th{
-  border: 1px solid #151314;
-    text-align: center;
-    padding: 1rem;
-}
-.body table th:hover{
-  background-color: yellowgreen;
-  text-align: center;
-  box-shadow: 9px 9px 18px #1f1f1f, -9px -9px 18px #474747;
-}
-
-.body table td{
+.body table th {
   border: 1px solid #151314;
   text-align: center;
   padding: 1rem;
 }
-.body table td button{
+.body table th:hover {
+  background-color: yellowgreen;
+  text-align: center;
+  box-shadow:
+    9px 9px 18px #1f1f1f,
+    -9px -9px 18px #474747;
+}
+
+.body table td {
+  border: 1px solid #151314;
+  text-align: center;
+  padding: 1rem;
+}
+.body table td button {
   text-decoration: none;
   width: 100%;
   padding: 0.8rem;
@@ -156,11 +158,114 @@ section div a:hover{
   color: var(--color3);
   text-transform: capitalize;
 }
-.body table td button:hover{
+.body table td button:hover {
   background-color: var(--color2);
   color: var(--color1);
 }
-table.center{
+table.center {
   margin-left: auto;
   margin-right: auto;
+}
+
+.Phone {
+  padding: 1rem;
+}
+.Phone h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.Phone .PhoneWrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Phone .PhoneWrapper .Phonecard {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 2px var(--color2);
+  width: 40%;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  padding: 1rem;
+}
+.Phone .PhoneWrapper .Phonecard .phoneimage {
+  width: 30%;
+  display: grid;
+  place-content: center;
+}
+.Phone .PhoneWrapper .Phonecard .phoneimage img {
+  width: 100%;
+}
+.Phone .PhoneWrapper .Phonecard .phoneDetail {
+  width: 70%;
+}
+.Phone .PhoneWrapper .Phonecard .phoneDetail h2 {
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.Phone .PhoneWrapper .Phonecard .phoneDetail p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.Phone .PhoneWrapper .Phonecard .phoneDetail p span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color2);
+  font-size: 16px;
+  display: grid;
+  place-content: center;
+  color: var(--color3);
+  margin-right: 10px;
+}
+
+.Phone .PhoneWrapper .btnBuy {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.Phone .PhoneWrapper .btnBuy button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--color2);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--color4);
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputContainer .inputContainerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  row-gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.inputContainer .inputContainerRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  row-gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.inputContainer input {
+  height: 30px;
+}
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--color2);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--color4);
 }

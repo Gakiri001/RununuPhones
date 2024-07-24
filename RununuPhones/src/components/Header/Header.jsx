@@ -5,24 +5,24 @@ import "./Header.css";
 import logo from "../../assets/phoneLogo.jpeg";
 import { FaShoppingCart } from "react-icons/fa";
 import { useAuth } from "../../context/AuthContext";
-import Cookies from 'js-cookie';
-import {jwtDecode} from "jwt-decode";  // Note: import jwtDecode without destructuring
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode"; // Note: import jwtDecode without destructuring
 
 function Header() {
-  const [cookieValue, setCookieValue] = useState('');
+  const [cookieValue, setCookieValue] = useState("");
   const location = useLocation(); // Get the current location
   const navigate = useNavigate();
   const { user, logout1 } = useAuth();
 
   useEffect(() => {
     // Get the cookie when the component mounts
-    const value = Cookies.get('rununu_access_token');
+    const value = Cookies.get("rununu_access_token");
     if (value) {
       const DecodedValue = jwtDecode(value);
       setCookieValue(DecodedValue);
       console.log(DecodedValue);
     } else {
-      console.log('Empty');
+      console.log("Empty");
     }
   }, []);
 
@@ -34,7 +34,7 @@ function Header() {
   };
 
   // Check if the current path is "/Admin"
-  const isAdminPath = location.pathname.toLowerCase() === '/admin';
+  const isAdminPath = location.pathname.toLowerCase() === "/admin";
 
   if (isAdminPath) {
     return null; // Do not render the header for Admin path

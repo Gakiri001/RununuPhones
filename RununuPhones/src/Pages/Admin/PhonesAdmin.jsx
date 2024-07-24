@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Formik, useFormik } from "formik";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { apiurl } from "../../utils/config";
+import "./Admin.css";
 
 function PhonesAdmin() {
   const [loading, setLoading] = useState(false);
@@ -55,6 +56,7 @@ function PhonesAdmin() {
       <form action="" onSubmit={formik.handleSubmit}>
         <div className="inputContainer">
           <div className="inputContainerLeft">
+            <label htmlFor="">Enter phone image</label>
             <input
               type="text"
               name="phoneImage"
@@ -62,6 +64,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the image of the Phone"
             />
+            <label htmlFor="">Enter phone Name</label>
             <input
               type="text"
               name="phoneName"
@@ -69,6 +72,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the Phone Name"
             />
+            <label htmlFor="">Enter phone resolution</label>
             <input
               type="text"
               name="resolution"
@@ -76,6 +80,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the resolution of the phone"
             />
+            <label htmlFor="">Enter phone processor</label>
             <input
               type="text"
               name="processor"
@@ -85,6 +90,7 @@ function PhonesAdmin() {
             />
           </div>
           <div className="inputContainerRight">
+            <label htmlFor="">Enter phone RAM</label>
             <input
               type="number"
               name="ram"
@@ -92,6 +98,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the RAM of the Phone"
             />
+            <label htmlFor="">Enter phone storage</label>
             <input
               type="number"
               name="storage"
@@ -99,6 +106,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the storage size of the Phone"
             />
+            <label htmlFor="">Enter phone connectivity</label>
             <input
               type="text"
               name="connectivity"
@@ -106,6 +114,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the connectivity of the phone"
             />
+            <label htmlFor="">Enter phone battery</label>
             <input
               type="number"
               name="battery"
@@ -113,6 +122,7 @@ function PhonesAdmin() {
               onChange={formik.handleChange}
               placeholder="Enter the battery life of the phone"
             />
+            <label htmlFor="">Enter phone price</label>
             <input
               type="number"
               name="price"

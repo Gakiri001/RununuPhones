@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/config";
+import "./Admin.css";
 
 function ViewPhones() {
   const [phones, setPhones] = useState([]);
@@ -75,25 +76,25 @@ function ViewPhones() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
+    <div className="Phone">
       <h1>Phones at Store</h1>
-      <div>
+      <div className="PhoneWrapper">
         {phones.map((current) => (
-          <div key={current.id}>
-            <div>
+          <div className="Phonecard" key={current.id}>
+            <div className="phoneimage">
               <img src={current.phoneImage} alt={current.phoneName} />
             </div>
-            <div>
+            <div className="phoneDetail">
               <h1>{current.phoneName}</h1>
-              <p>{current.resolution}</p>
-              <p>{current.processor}</p>
-              <p>{current.ram}</p>
-              <p>{current.storage}</p>
-              <p>{current.connectivity}</p>
-              <p>{current.battery}</p>
-              <p>{current.price}</p>
+              <p>resolution: {current.resolution}</p>
+              <p>processor: {current.processor}</p>
+              <p>RAM: {current.ram}</p>
+              <p>Storage: {current.storage}</p>
+              <p>connectivity: {current.connectivity}</p>
+              <p>Battery: {current.battery}</p>
+              <p>Ksh, {current.price}</p>
             </div>
-            <div>
+            <div className="btnBuy">
               <button onClick={() => handleDelete(current.id)}>Delete</button>
               <button onClick={() => setEditPhone(current)}>Edit</button>
             </div>

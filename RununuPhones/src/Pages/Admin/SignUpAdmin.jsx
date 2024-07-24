@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/config";
-import "./Admin.css"
+import "./Admin.css";
 
 function SignUpAdmin() {
   const [signup, setSignup] = useState([]);
@@ -12,8 +12,8 @@ function SignUpAdmin() {
       try {
         const response = await fetch(`${apiurl}/api/users/register`);
         const data = await response.json();
-        console.log(data)
-        
+        console.log(data);
+
         if (data.success === true) {
           setSignup(data.users);
         } else {
@@ -31,12 +31,12 @@ function SignUpAdmin() {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`${apiurl}/api/users/register/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
       });
       const data = await response.json();
 
       if (response.ok) {
-        setSignup(signup.filter(register => register.id !== id));
+        setSignup(signup.filter((register) => register.id !== id));
         alert("Data Deleted");
       } else {
         setError(data.message);
@@ -70,16 +70,15 @@ function SignUpAdmin() {
               <td>{register.email}</td>
               <td>{register.phoneNumber}</td>
               <td>
-                <button onClick={() => handleDelete(register.id)}>Delete</button>
+                <button onClick={() => handleDelete(register.id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
-      
       </table>
-
     </div>
-    
   );
 }
 

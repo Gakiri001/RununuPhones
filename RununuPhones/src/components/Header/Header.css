@@ -38,12 +38,11 @@
 .Header .HeaderRight ul li .HeaderLink:hover {
   color: var(--color3);
 }
-.Header .HeaderRight ul li .HeaderLink span{
+.Header .HeaderRight ul li .HeaderLink span {
   display: flex;
 }
-.Header .HeaderRight ul li .HeaderLink span #cartsize{
+.Header .HeaderRight ul li .HeaderLink span #cartsize {
   font-size: 15px;
-
 }
 .Header .HeaderButtons {
   width: 20%;

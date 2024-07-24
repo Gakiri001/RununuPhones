@@ -3,16 +3,13 @@ import { config } from "dotenv";
 import usersRouter from "./routes/users.routes.js";
 import phoneRouter from "./routes/phone.route.js";
 import ContactRouter from "./routes/contact.route.js";
-import OrderRouter from "./routes/order.route.js"
+import OrderRouter from "./routes/order.route.js";
 import cors from "cors";
-import cookieParser from 'cookie-parser';
-
+import cookieParser from "cookie-parser";
 
 config();
 
 const app = express();
-
-
 
 app.use(
   cors({

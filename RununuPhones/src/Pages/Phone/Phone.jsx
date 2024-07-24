@@ -8,14 +8,13 @@ import { FaStreetView } from "react-icons/fa";
 import { GrConnectivity } from "react-icons/gr";
 import { FaBatteryFull } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa";
-import "./Phone.css"
-
+import "./Phone.css";
 
 function Phone() {
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [cartitemSelected, setCartitemSelected] = useState([])
+  const [cartitemSelected, setCartitemSelected] = useState([]);
 
   const { addToCart, isInCart } = useCart();
 
@@ -42,7 +41,7 @@ function Phone() {
   const handleAddToCart = (current) => {
     if (!isInCart(current.id)) {
       addToCart(current);
-      console.log(current)
+      console.log(current);
       alert("Successfully Added to Cart");
     } else {
       alert("Already Added to the Cart");
@@ -55,7 +54,7 @@ function Phone() {
     //   console.log(cartitemSelected,"Selected")
     // }
     // else{
-      
+
     //   setCartitemSelected(pre=> [...pre,currentId])
     //   console.log(cartitemSelected,"SElected")
     // }
@@ -75,13 +74,55 @@ function Phone() {
             </div>
             <div className="phoneDetail">
               <h2>{current.phoneName}</h2>
-              <p> <span><FaStreetView/></span> {current.resolution} Resolution</p>
-              <p>  <span><PiEngineBold/></span> {current.processor} Processor</p>
-              <p>  <span><FaGear/></span> {current.ram} RAM</p>
-              <p>  <span><FaStoreAlt/></span> {current.storage} GB</p>
-              <p>  <span><GrConnectivity/></span> {current.connectivity}</p>
-              <p>  <span><FaBatteryFull/></span> {current.battery} Battery Life</p>
-              <p>  <span><FaMoneyBill/></span> Ksh.{current.price}</p>
+              <p>
+                {" "}
+                <span>
+                  <FaStreetView />
+                </span>{" "}
+                {current.resolution} Resolution
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <PiEngineBold />
+                </span>{" "}
+                {current.processor} Processor
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <FaGear />
+                </span>{" "}
+                {current.ram} RAM
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <FaStoreAlt />
+                </span>{" "}
+                {current.storage} GB
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <GrConnectivity />
+                </span>{" "}
+                {current.connectivity}
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <FaBatteryFull />
+                </span>{" "}
+                {current.battery} Battery Life
+              </p>
+              <p>
+                {" "}
+                <span>
+                  <FaMoneyBill />
+                </span>{" "}
+                Ksh.{current.price}
+              </p>
             </div>
             <div className="btnBuy">
               <button onClick={() => handleAddToCart(current)}>

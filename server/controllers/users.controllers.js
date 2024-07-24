@@ -48,19 +48,23 @@ export const loginUser = async (req, res) => {
           email: user.email,
         };
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-          expiresIn: '10m',
+          expiresIn: "10m",
         });
-        res.cookie('rununu_access_token', token, {
+        res.cookie("rununu_access_token", token, {
           httpOnly: false, // Use httpOnly for security
-          secure: process.env.JWT_SECRET === 'production', // Use secure cookies in production
-          sameSite: 'strict', // Adjust according to your needs
+          secure: process.env.JWT_SECRET === "production", // Use secure cookies in production
+          sameSite: "strict", // Adjust according to your needs
         });
         res.status(200).json({ success: true, data: payload });
       } else {
-        res.status(400).json({ success: false, message: 'Wrong Login credentials' });
+        res
+          .status(400)
+          .json({ success: false, message: "Wrong Login credentials" });
       }
     } else {
-      res.status(400).json({ success: false, message: 'Wrong Login credentials' });
+      res
+        .status(400)
+        .json({ success: false, message: "Wrong Login credentials" });
     }
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });

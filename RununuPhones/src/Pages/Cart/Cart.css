@@ -1,36 +1,36 @@
-.Cart{
+.Cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-table{
+table {
   border: 1px solid #151314;
   text-align: center;
   border-radius: 7px;
 }
-table thead th{
+table thead th {
   border: 1px solid #151314;
   text-align: center;
   border-radius: 7px;
 }
-table thead td{
+table thead td {
   border: 1px solid #151314;
   text-align: center;
   padding: 1rem;
 }
 
-table tbody td{
+table tbody td {
   border: 1px solid #151314;
   text-align: center;
   padding: 1rem;
 }
 
-table tbody .phonedetails img{
+table tbody .phonedetails img {
   width: 30%;
 }

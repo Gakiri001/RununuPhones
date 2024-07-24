@@ -9,15 +9,12 @@ import { apiurl } from "../../utils/config";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-
 function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
-
-  
   const handleSubmit = async (formValues) => {
     try {
       setLoading(true);

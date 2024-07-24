@@ -1,18 +1,18 @@
-.Phone{
+.Phone {
   padding: 1rem;
 }
-.Phone h1{
+.Phone h1 {
   text-align: center;
   margin-bottom: 1rem;
 }
-.Phone .PhoneWrapper{
+.Phone .PhoneWrapper {
   display: flex;
   gap: 2rem;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-.Phone .PhoneWrapper .Phonecard{
+.Phone .PhoneWrapper .Phonecard {
   display: flex;
   flex-wrap: wrap;
   border: solid 2px var(--color2);
@@ -21,27 +21,27 @@
   border-top-right-radius: 100px;
   padding: 1rem;
 }
-.Phone .PhoneWrapper .Phonecard .phoneimage{
+.Phone .PhoneWrapper .Phonecard .phoneimage {
   width: 30%;
   display: grid;
   place-content: center;
 }
-.Phone .PhoneWrapper .Phonecard .phoneimage img{
+.Phone .PhoneWrapper .Phonecard .phoneimage img {
   width: 100%;
 }
-.Phone .PhoneWrapper .Phonecard .phoneDetail{
+.Phone .PhoneWrapper .Phonecard .phoneDetail {
   width: 70%;
 }
-.Phone .PhoneWrapper .Phonecard .phoneDetail h2{
+.Phone .PhoneWrapper .Phonecard .phoneDetail h2 {
   margin-bottom: 2rem;
   font-style: italic;
 }
-.Phone .PhoneWrapper .Phonecard .phoneDetail p{
+.Phone .PhoneWrapper .Phonecard .phoneDetail p {
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
 }
-.Phone .PhoneWrapper .Phonecard .phoneDetail p span{
+.Phone .PhoneWrapper .Phonecard .phoneDetail p span {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -53,13 +53,13 @@
   margin-right: 10px;
 }
 
-.Phone .PhoneWrapper .btnBuy{
+.Phone .PhoneWrapper .btnBuy {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-.Phone .PhoneWrapper .btnBuy button{
+.Phone .PhoneWrapper .btnBuy button {
   padding: 0.5rem 1rem;
   border: none;
   background-color: var(--color2);

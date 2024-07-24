@@ -4,8 +4,7 @@ import { CartProvider, useCart } from "./Cartcontext";
 import { useAuth } from "../../context/AuthContext";
 import { Formik, useFormik } from "formik";
 import { apiurl } from "../../utils/config";
-import "./Cart.css"
-
+import "./Cart.css";
 
 const Cart = () => {
   const { user } = useAuth();
@@ -19,7 +18,6 @@ const Cart = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
 
   const handleQuantityChange = (itemId, newQuantity) => {
     if (newQuantity > 0) {
@@ -79,32 +77,30 @@ const Cart = () => {
   // };
 
   const handleSubmit = async (formValues) => {
-    console.log("Product to buy")
+    console.log("Product to buy");
     try {
       setLoading(true);
       setError(false);
-      const response = await fetch(`${apiurl}/api/register/order`,{
+      const response = await fetch(`${apiurl}/api/register/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formValues),
-      },)
+      });
       const data = await response.json();
-      console.log("response", response)
-      console.log("data", data)
+      console.log("response", response);
+      console.log("data", data);
       if (!response.ok) {
         throw new Error("order failed");
       }
-      alert("order placed")
-    } 
-    catch (err) {
+      alert("order placed");
+    } catch (err) {
       setError(err.message);
-    }
-    finally {
+    } finally {
       setLoading(false);
     }
-  }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -184,7 +180,7 @@ const Cart = () => {
           value={formik.values.deliveryDate}
           onChange={formik.handleChange}
         />
-        <input className="submit" type="submit" value="Place Order"/>
+        <input className="submit" type="submit" value="Place Order" />
       </form>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}

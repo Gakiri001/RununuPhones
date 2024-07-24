@@ -155,12 +155,10 @@ export const updatephone = async (req, res) => {
   }
 };
 
-
-  // if (!isInCart(current.id)) {
-    //   addToCart(current);
-    //   console.log(current.id)
-    //   alert("Successfully Added to Cart");
-    // } else {
-    //   alert("Already Added to the Cart");
-    // }
-
+// if (!isInCart(current.id)) {
+//   addToCart(current);
+//   console.log(current.id)
+//   alert("Successfully Added to Cart");
+// } else {
+//   alert("Already Added to the Cart");
+// }
