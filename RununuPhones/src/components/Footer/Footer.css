@@ -1,6 +1,9 @@
 .Footer {
   background-color: #3572ef;
   padding: 0.6rem;
+  /* bottom: 0;
+  position: absolute;
+  width: 100%; */
 }
 .Footer .FooterWrapper {
   display: flex;

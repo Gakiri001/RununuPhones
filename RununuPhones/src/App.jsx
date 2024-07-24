@@ -12,14 +12,16 @@ import Contact from "./Pages/Contact/Contact";
 import ContactAdmin from "./Pages/Admin/ContactAdmin";
 import Signup from "./Pages/Signup/Signup";
 import Login from "./Pages/Login/Login";
-import { AuthProvider } from "./context/AuthContext";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import SignUpAdmin from "./Pages/Admin/SignUpAdmin.jsx";
+// import useAuthStore from "./store/authStore.js";
+import React, {useEffect} from "react";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <BrowserRouter>
-        <AuthProvider>
+     
           <CartProvider>
             <Header />
             <Routes>
@@ -29,33 +31,33 @@ function App() {
               <Route
                 path="/Home"
                 element={
-                  <ProtectedRoute>
+                
                     <Home />
-                  </ProtectedRoute>
+                  
                 }
               />
               <Route
                 path="/Phone"
                 element={
-                  <ProtectedRoute>
+                
                     <Phone />
-                  </ProtectedRoute>
+                  
                 }
               />
               <Route
                 path="/Cart"
                 element={
-                  <ProtectedRoute>
+                
                     <Cart />
-                  </ProtectedRoute>
+                  
                 }
               />
               <Route
                 path="/Contact"
                 element={
-                  <ProtectedRoute>
+                
                     <Contact />
-                  </ProtectedRoute>
+                  
                 }
               />
               <Route path="/Signup" element={<Signup />} />
@@ -64,13 +66,14 @@ function App() {
               <Route path="/PhonesAdmin" element={<PhonesAdmin />} />
               <Route path="/ViewPhones" element={<ViewPhones />} />
               <Route path="/ContactAdmin" element={<ContactAdmin />} />
+              <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
             </Routes>
 
             <Footer />
           </CartProvider>
-        </AuthProvider>
+       
       </BrowserRouter>
-    </>
+      </AuthProvider>
   );
 }
 

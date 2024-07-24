@@ -9,12 +9,15 @@ import { apiurl } from "../../utils/config";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
+
 function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
+
+  
   const handleSubmit = async (formValues) => {
     try {
       setLoading(true);
@@ -65,7 +68,7 @@ function Login() {
             <h1>Login</h1>
             <div className="inputGroup">
               <div className="inputFiled">
-                <label htmlFor="">
+                <label htmlFor="email">
                   <FaEnvelope />
                 </label>
                 <Field
@@ -80,7 +83,7 @@ function Login() {
               </div>
 
               <div className="inputFiled">
-                <label htmlFor="">
+                <label htmlFor="password">
                   <GiPadlock />
                 </label>
                 <Field
@@ -110,7 +113,7 @@ function Login() {
             </div>
             {error && <p className="error">{error}</p>}
             <p className="loginPara">
-              Lost password <a href="/Signup">Click Here</a>
+              Lost password? <a href="/ResetPassword">Click Here</a>
             </p>
             <p className="loginPara">
               If no account click <a href="/Signup">Sign Up</a> to register

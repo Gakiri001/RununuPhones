@@ -1,0 +1,166 @@
+:root {
+  --color1: #006769;
+  --color2: #40a578;
+  --color3: #9dde8d;
+  --color4: #e6ff94;
+}
+
+section{
+  background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
+    url(../../assets/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  row-gap: 2rem;
+  height: 100vh;
+  position: relative;
+}
+section div{
+  width: 100%;
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color2);
+  padding: 1rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  place-content: center;
+}
+section div a{
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1rem 0;
+  color: black;
+  text-transform: capitalize;
+}
+section div a:hover{
+  background-color: var(--color3);
+}
+:root {
+  --color1: #006769;
+  --color2: #40a578;
+  --color3: #9dde8d;
+  --color4: #e6ff94;
+}
+section{
+  background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
+    url(../../assets/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  row-gap: 2rem;
+  height: 100vh;
+  position: relative;
+}
+section div{
+  width: 100%;
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color2);
+  padding: 1rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  place-content: center;
+}
+section div h1{
+  font-size: 50px;
+  color: var(--color4);
+}
+
+
+section div a{
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1rem 0;
+  color: black;
+  text-transform: capitalize;
+}
+section div a:hover{
+  background-color: var(--color3);
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color2);
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 4rem;
+}
+.body h1{
+  text-align: center;
+  margin: 2rem;
+}
+.body table{
+  border: 1px solid #151314;
+  text-align: center;
+  border-radius: 7px;
+  background: linear-gradient(145deg, var(--color3), var(--color3));
+  box-shadow: 9px 9px 18px #1f1f1f, -9px -9px 18px #474747;
+ 
+}
+.body table th{
+  border: 1px solid #151314;
+    text-align: center;
+    padding: 1rem;
+}
+.body table th:hover{
+  background-color: yellowgreen;
+  text-align: center;
+  box-shadow: 9px 9px 18px #1f1f1f, -9px -9px 18px #474747;
+}
+
+.body table td{
+  border: 1px solid #151314;
+  text-align: center;
+  padding: 1rem;
+}
+.body table td button{
+  text-decoration: none;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1rem 0;
+  color: var(--color3);
+  text-transform: capitalize;
+}
+.body table td button:hover{
+  background-color: var(--color2);
+  color: var(--color1);
+}
+table.center{
+  margin-left: auto;
+  margin-right: auto;
+}

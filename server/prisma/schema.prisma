@@ -50,3 +50,12 @@ model ContactSubject{
 
   @@map("subject_table")
 }
+
+model orderData{
+  id String @id @default(uuid())
+  pickup String @map("pickup")
+  deliveryDate DateTime @map("deliveryDate")
+
+  @@map("order_table")
+}
+

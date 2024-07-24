@@ -43,7 +43,7 @@ export const createPhone = async (req, res) => {
     });
     res.status(201).json({ success: true, message: "response successfully" });
   } catch (err) {
-    res.status(500).json({ success: true, message: "server Failed" });
+    res.status(500).json({ success: false, message: "server Failed" });
   }
 };
 
@@ -154,3 +154,13 @@ export const updatephone = async (req, res) => {
     res.status(500).json({ success: false, message: "An error occured" });
   }
 };
+
+
+  // if (!isInCart(current.id)) {
+    //   addToCart(current);
+    //   console.log(current.id)
+    //   alert("Successfully Added to Cart");
+    // } else {
+    //   alert("Already Added to the Cart");
+    // }
+

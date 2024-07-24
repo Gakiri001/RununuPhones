@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/config";
 import { useCart } from "../Cart/Cartcontext.jsx";
+import { PiEngineBold } from "react-icons/pi";
+import { FaGear } from "react-icons/fa6";
+import { FaStoreAlt } from "react-icons/fa";
+import { FaStreetView } from "react-icons/fa";
+import { GrConnectivity } from "react-icons/gr";
+import { FaBatteryFull } from "react-icons/fa";
+import { FaMoneyBill } from "react-icons/fa";
+import "./Phone.css"
+
 
 function Phone() {
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [cartitemSelected, setCartitemSelected] = useState([])
 
   const { addToCart, isInCart } = useCart();
 
@@ -32,35 +42,48 @@ function Phone() {
   const handleAddToCart = (current) => {
     if (!isInCart(current.id)) {
       addToCart(current);
+      console.log(current)
       alert("Successfully Added to Cart");
     } else {
       alert("Already Added to the Cart");
     }
+
+    // const itemIndex = cartitemSelected.indexOf(currentId)
+
+    // if(itemIndex !== -1){
+    //   console.log("Item Already Added")
+    //   console.log(cartitemSelected,"Selected")
+    // }
+    // else{
+      
+    //   setCartitemSelected(pre=> [...pre,currentId])
+    //   console.log(cartitemSelected,"SElected")
+    // }
   };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
+    <div className="Phone">
       <h1>Phones Store</h1>
-      <div>
+      <div className="PhoneWrapper">
         {phones.map((current) => (
-          <div key={current.id}>
-            <div>
+          <div className="Phonecard" key={current.id}>
+            <div className="phoneimage">
               <img src={current.phoneImage} alt={current.phoneName} />
             </div>
-            <div>
-              <h1>{current.phoneName}</h1>
-              <p>Resolution: {current.resolution}</p>
-              <p>{current.processor}</p>
-              <p>{current.ram}</p>
-              <p>{current.storage}</p>
-              <p>{current.connectivity}</p>
-              <p>{current.battery}</p>
-              <p>{current.price}</p>
+            <div className="phoneDetail">
+              <h2>{current.phoneName}</h2>
+              <p> <span><FaStreetView/></span> {current.resolution} Resolution</p>
+              <p>  <span><PiEngineBold/></span> {current.processor} Processor</p>
+              <p>  <span><FaGear/></span> {current.ram} RAM</p>
+              <p>  <span><FaStoreAlt/></span> {current.storage} GB</p>
+              <p>  <span><GrConnectivity/></span> {current.connectivity}</p>
+              <p>  <span><FaBatteryFull/></span> {current.battery} Battery Life</p>
+              <p>  <span><FaMoneyBill/></span> Ksh.{current.price}</p>
             </div>
-            <div>
+            <div className="btnBuy">
               <button onClick={() => handleAddToCart(current)}>
                 Add to Cart
               </button>

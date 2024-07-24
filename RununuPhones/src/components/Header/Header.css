@@ -33,10 +33,17 @@
 }
 .Header .HeaderRight ul li .HeaderLink {
   text-decoration: none;
-  color: var(--color3);
+  color: var(--color2);
 }
 .Header .HeaderRight ul li .HeaderLink:hover {
-  color: var(--color2);
+  color: var(--color3);
+}
+.Header .HeaderRight ul li .HeaderLink span{
+  display: flex;
+}
+.Header .HeaderRight ul li .HeaderLink span #cartsize{
+  font-size: 15px;
+
 }
 .Header .HeaderButtons {
   width: 20%;
