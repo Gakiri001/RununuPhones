@@ -8,6 +8,7 @@ function ViewPhones() {
   const [error, setError] = useState(null);
   const [editPhone, setEditPhone] = useState(null);
 
+  
   useEffect(() => {
     const fetchPhones = async () => {
       try {
