@@ -34,3 +34,7 @@ table tbody td {
 table tbody .phonedetails img {
   width: 30%;
 }
+form{
+  display: flex;
+  flex-direction: column;
+}

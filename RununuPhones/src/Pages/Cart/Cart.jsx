@@ -162,7 +162,6 @@ const Cart = () => {
       </table>
       <div>
         <h3>Total: ksh.{getTotalPrice()}</h3>
-        <button onClick={handleSubmit}>Buy Now</button>
         <button onClick={clearCart}>Clear cart</button>
       </div>
       <form onSubmit={formik.handleSubmit}>
